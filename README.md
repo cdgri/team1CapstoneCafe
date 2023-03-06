@@ -36,22 +36,26 @@ mvn spring-boot:run
 ## Test by API
 - order
 ```
- http :8088/orders id="id" productId="productId" qty="qty" customerId="customerId" amount="amount" status="status" orderId="orderId" 
+TODO: NEED orderId auto increase
+http POST :8081/orders productId="10" qty="1" customerId="cdgri" amount="2" status="ordered" pickupTime="20230306150010" orderId="2" 
+
+http GET :8081/orders	
 ```
 - cafemanagement
 ```
- http :8088/orderManagements id="id" productId="productId" qty="qty" customerId="customerId" status="status" orderId="orderId" 
+ http GET :8082/orderManagements
 ```
 - payment
 ```
- http :8088/pays id="id" amount="amount" status="status" customerId="customerId" orderId="orderId" qty="qty" productId="productId" 
+ http GET :8083/pays
 ```
 - customermanagement
 ```
- http :8088/pushMessages id="id" sendMsg="sendMsg" productId="productId" qty="qty" status="status" orderId="orderId" 
+ http GET :8084/pushMessages
 ```
 - dashboard
 ```
+TODO: how to use this service?
 ```
 
 

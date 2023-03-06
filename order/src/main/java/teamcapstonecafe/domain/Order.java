@@ -85,88 +85,28 @@ public class Order  {
 
 
     public static void updateOrderStatus(CoffeeDone coffeeDone){
-
-        /** Example 1:  new item 
-        Order order = new Order();
-        repository().save(order);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(coffeeDone.get???()).ifPresent(order->{
-            
-            order // do something
-            repository().save(order);
-
-
-         });
-        */
-
-        
+        repository().findAll().forEach(s -> {
+            if(s.orderId == coffeeDone.getOrderId()){
+                s.setStatus(coffeeDone.getStatus());
+            };
+        });
     }
     public static void updateOrderStatus(PaymentApproved paymentApproved){
-
-        /** Example 1:  new item 
-        Order order = new Order();
-        repository().save(order);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(paymentApproved.get???()).ifPresent(order->{
-            
-            order // do something
-            repository().save(order);
-
-
-         });
-        */
-
-        
+        repository().findAll().forEach(s -> {
+            if(s.orderId == paymentApproved.getOrderId()){
+                s.setStatus(paymentApproved.getStatus());
+            };
+        });
     }
     public static void updateOrderStatus(Ordered ordered){
-
-        /** Example 1:  new item 
-        Order order = new Order();
-        repository().save(order);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(ordered.get???()).ifPresent(order->{
-            
-            order // do something
-            repository().save(order);
-
-
-         });
-        */
-
-        
+        //DO NOT NEED
     }
     public static void updateOrderStatus(OrderCanceled orderCanceled){
-
-        /** Example 1:  new item 
-        Order order = new Order();
-        repository().save(order);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderCanceled.get???()).ifPresent(order->{
-            
-            order // do something
-            repository().save(order);
-
-
-         });
-        */
-
-        
+        repository().findAll().forEach(s -> {
+            if(s.orderId == orderCanceled.getOrderId()){
+                s.setStatus(orderCanceled.getStatus());
+            };
+        });
     }
 
 
