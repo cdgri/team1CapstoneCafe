@@ -73,28 +73,14 @@ public class OrderManagement  {
         //
     }
 
-
-
     public static void orderReceived(PaymentApproved paymentApproved){
-
-        /** Example 1:  new item 
         OrderManagement orderManagement = new OrderManagement();
+        orderManagement.setOrderId(paymentApproved.getOrderId());
+        orderManagement.setCustomerId(paymentApproved.getCustomerId());
+        orderManagement.setProductId(paymentApproved.getProductId());
+        orderManagement.setQty(paymentApproved.getQty());
+        orderManagement.setStatus("CoffeeDone");
         repository().save(orderManagement);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(paymentApproved.get???()).ifPresent(orderManagement->{
-            
-            orderManagement // do something
-            repository().save(orderManagement);
-
-
-         });
-        */
-
-        
     }
 
 

@@ -64,109 +64,47 @@ public class PushMessage  {
 
 
     public static void messageNotified(CoffeeDone coffeeDone){
-
-        /** Example 1:  new item 
-        PushMessage pushMessage = new PushMessage();
-        repository().save(pushMessage);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(coffeeDone.get???()).ifPresent(pushMessage->{
-            
-            pushMessage // do something
-            repository().save(pushMessage);
-
-
-         });
-        */
-
-        
+        repository().findAll().forEach(s -> {
+            if(s.orderId == coffeeDone.getOrderId()){
+                s.setStatus(coffeeDone.getStatus());
+                s.setSendMsg("CoffeeDone");
+            };
+        });
     }
     public static void messageNotified(Ordered ordered){
-
-        /** Example 1:  new item 
         PushMessage pushMessage = new PushMessage();
+        pushMessage.setOrderId(ordered.getOrderId());
+        //pushMessage.setCustomerId(ordered.getCustomerId()); TODO: fix model
+        //pushMessage.setAmount(ordered.getAmount()); TODO: fix model
+        pushMessage.setProductId(ordered.getProductId());
+        pushMessage.setQty(ordered.getQty());
+        pushMessage.setStatus(ordered.getStatus());
+        pushMessage.setSendMsg("Ordered");
         repository().save(pushMessage);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(ordered.get???()).ifPresent(pushMessage->{
-            
-            pushMessage // do something
-            repository().save(pushMessage);
-
-
-         });
-        */
-
-        
     }
     public static void messageNotified(OrderCanceled orderCanceled){
-
-        /** Example 1:  new item 
-        PushMessage pushMessage = new PushMessage();
-        repository().save(pushMessage);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderCanceled.get???()).ifPresent(pushMessage->{
-            
-            pushMessage // do something
-            repository().save(pushMessage);
-
-
-         });
-        */
-
-        
+        repository().findAll().forEach(s -> {
+            if(s.orderId == orderCanceled.getOrderId()){
+                s.setStatus(orderCanceled.getStatus());
+                s.setSendMsg("OrderCanceled");
+            };
+        });
     }
     public static void messageNotified(PaymentCanceled paymentCanceled){
-
-        /** Example 1:  new item 
-        PushMessage pushMessage = new PushMessage();
-        repository().save(pushMessage);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(paymentCanceled.get???()).ifPresent(pushMessage->{
-            
-            pushMessage // do something
-            repository().save(pushMessage);
-
-
-         });
-        */
-
-        
+        repository().findAll().forEach(s -> {
+            if(s.orderId == paymentCanceled.getOrderId()){
+                s.setStatus(paymentCanceled.getStatus());
+                s.setSendMsg("PaymentCanceled");
+            };
+        });
     }
     public static void messageNotified(PaymentApproved paymentApproved){
-
-        /** Example 1:  new item 
-        PushMessage pushMessage = new PushMessage();
-        repository().save(pushMessage);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(paymentApproved.get???()).ifPresent(pushMessage->{
-            
-            pushMessage // do something
-            repository().save(pushMessage);
-
-
-         });
-        */
-
-        
+        repository().findAll().forEach(s -> {
+            if(s.orderId == paymentApproved.getOrderId()){
+                s.setStatus(paymentApproved.getStatus());
+                s.setSendMsg("PaymentApproved");
+            };
+        });
     }
 
 

@@ -85,46 +85,21 @@ public class Pay  {
 
 
     public static void cancelPayment(OrderCanceled orderCanceled){
-
-        /** Example 1:  new item 
-        Pay pay = new Pay();
-        repository().save(pay);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderCanceled.get???()).ifPresent(pay->{
-            
-            pay // do something
-            repository().save(pay);
-
-
-         });
-        */
-
-        
+        repository().findAll().forEach(s -> {
+            if(s.orderId == orderCanceled.getOrderId()){
+                s.setStatus("PaymentCanceled");
+            };
+        });
     }
     public static void payment(Ordered ordered){
-
-        /** Example 1:  new item 
         Pay pay = new Pay();
+        pay.setOrderId(ordered.getOrderId());
+        pay.setCustomerId(ordered.getCustomerId());
+        pay.setProductId(ordered.getProductId());
+        pay.setQty(ordered.getQty());
+        pay.setAmount(ordered.getAmount());
+        pay.setStatus("PaymentApproved");
         repository().save(pay);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(ordered.get???()).ifPresent(pay->{
-            
-            pay // do something
-            repository().save(pay);
-
-
-         });
-        */
-
-        
     }
 
 
