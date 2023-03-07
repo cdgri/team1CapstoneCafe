@@ -1,0 +1,14 @@
+#order timeout
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: vs-order-network-rule
+  namespace: default
+spec:
+  hosts:
+  - order
+  http:
+  - route:
+    - destination:
+        host: order
+    timeout: 1.0s

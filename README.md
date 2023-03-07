@@ -1,9 +1,4 @@
-# 김대웅
-#  박상채
-#  홍서연
-#
-#
-
+# 김대웅 조형일 
 ## Model
 www.msaez.io/#/storming/e9c2e0dc3267d7467d074ea6dc9a3833
 
@@ -22,10 +17,6 @@ cd /bin
 ```
 
 ## Run the backend micro-services
-
-
-
-
 See the README.md files inside the each microservices directory:
 
 - order

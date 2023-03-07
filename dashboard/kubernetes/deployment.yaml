@@ -16,9 +16,21 @@ spec:
     spec:
       containers:
         - name: dashboard
-          image: wisemaninatown/dashboard:20230307
+          #image: wisemaninatown/dashboard:20230307
+          image: wisemaninatown/dashboard:database
           ports:
             - containerPort: 8080
+          env:
+            - name: superuser.userId
+              value: some_value					
+            - name: _DATASOURCE_ADDRESS
+              value: mysql
+            - name: _DATASOURCE_TABLESPACE
+              value: orderdb
+            - name: _DATASOURCE_USERNAME
+              value: root
+            - name: _DATASOURCE_PASSWORD
+              value: admin
           readinessProbe:
             httpGet:
               path: '/actuator/health'
@@ -35,3 +47,4 @@ spec:
             timeoutSeconds: 2
             periodSeconds: 5
             failureThreshold: 5
+          

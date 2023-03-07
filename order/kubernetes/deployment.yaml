@@ -19,6 +19,9 @@ spec:
           image: wisemaninatown/order:20230307
           ports:
             - containerPort: 8080
+          resources:
+            requests:
+              cpu: "200m"
           readinessProbe:
             httpGet:
               path: '/orders'
