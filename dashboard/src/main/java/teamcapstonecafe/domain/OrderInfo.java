@@ -12,7 +12,7 @@ import lombok.Data;
 public class OrderInfo {
 
         @Id
-        //@GeneratedValue(strategy=GenerationType.AUTO)
+        @GeneratedValue(strategy=GenerationType.AUTO)
         private Long id;
         private String productId;
         private Integer qty;

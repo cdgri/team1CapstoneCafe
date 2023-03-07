@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: cafemanagement
-          image: username/cafemanagement:latest
+          image: wisemaninatown/cafemanagement:20230307
           ports:
             - containerPort: 8080
           readinessProbe:

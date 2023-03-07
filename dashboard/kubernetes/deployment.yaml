@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: dashboard
-          image: username/dashboard:latest
+          image: wisemaninatown/dashboard:20230307
           ports:
             - containerPort: 8080
           readinessProbe:

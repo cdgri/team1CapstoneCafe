@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: customermanagement
-          image: username/customermanagement:latest
+          image: wisemaninatown/customermanagement:20230307
           ports:
             - containerPort: 8080
           readinessProbe:

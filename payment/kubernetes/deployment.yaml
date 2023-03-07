@@ -16,12 +16,12 @@ spec:
     spec:
       containers:
         - name: payment
-          image: username/payment:latest
+          image: wisemaninatown/payment:20230307
           ports:
             - containerPort: 8080
           readinessProbe:
             httpGet:
-              path: '/actuator/health'
+              path: '/pays'
               port: 8080
             initialDelaySeconds: 10
             timeoutSeconds: 2
@@ -29,7 +29,7 @@ spec:
             failureThreshold: 10
           livenessProbe:
             httpGet:
-              path: '/actuator/health'
+              path: '/pays'
               port: 8080
             initialDelaySeconds: 120
             timeoutSeconds: 2
