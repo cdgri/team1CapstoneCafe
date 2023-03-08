@@ -96,7 +96,7 @@ httpPort: 5601
 
 extraVolumes:
   []
-  # - name: extra
+  # - name: extras
   #   emptyDir: {}
 
 extraVolumeMounts:
