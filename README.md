@@ -1,4 +1,3 @@
-# 김대웅 조형일 
 ## Model
 www.msaez.io/#/storming/e9c2e0dc3267d7467d074ea6dc9a3833
 
